@@ -55,6 +55,10 @@
 #define	PUD_DOWN		 1
 #define	PUD_UP			 2
 
+#define PULLUP          5
+#define PULLDOWN        6
+#define PULLOFF         7
+
 // PWM
 
 #define	PWM_MODE_MS		0
@@ -77,6 +81,7 @@
 #define	PI_MODEL_CM		4
 #define	PI_MODEL_AP		5
 #define	PI_MODEL_2		6
+#define PI_MODEL_BM		7
 
 #define	PI_VERSION_UNKNOWN	0
 #define	PI_VERSION_1		1
@@ -89,10 +94,12 @@
 #define	PI_MAKER_SONY		2
 #define	PI_MAKER_QISDA		3
 #define	PI_MAKER_MBEST		4
+#define	PI_MAKER_ROBET		5
 
-extern const char *piModelNames    [7] ;
+#define BPVER 3 
+extern const char *piModelNames    [8] ;
 extern const char *piRevisionNames [5] ;
-extern const char *piMakerNames    [5] ;
+extern const char *piMakerNames    [6] ;
 
 
 //	Intended for the GPIO program Use at your own risk.

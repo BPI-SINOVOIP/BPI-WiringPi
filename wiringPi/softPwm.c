@@ -51,10 +51,11 @@
 
 #define	PULSE_TIME	100
 
-static volatile int marks         [MAX_PINS] ;
-static volatile int range         [MAX_PINS] ;
-static volatile pthread_t threads [MAX_PINS] ;
-static volatile int newPin = -1 ;
+static int marks         [MAX_PINS] ;
+static int range         [MAX_PINS] ;
+static pthread_t threads [MAX_PINS] ;
+
+int newPin = -1 ;
 
 
 /*

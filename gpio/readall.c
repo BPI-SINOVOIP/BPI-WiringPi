@@ -108,8 +108,8 @@ static int physToWpi [64] =
   -1, -1,
   -1, -1,
   -1, -1,
-  17, 18,
-  19, 20,
+  -1, -1,
+  -1, -1,
   -1, -1, -1, -1, -1, -1, -1, -1, -1
 } ;
 
@@ -290,7 +290,7 @@ static void plus2header (int model)
   else if (model == PI_MODEL_BP)
     printf (" +-----+-----+---------+------+---+--B Plus--+---+------+---------+-----+-----+\n") ;
   else
-    printf (" +-----+-----+---------+------+---+---Pi 2---+---+------+---------+-----+-----+\n") ;
+    printf (" +-----+-----+---------+------+---+---Pi ---+---+------+---------+-----+-----+\n") ;
 }
 
 
@@ -325,7 +325,7 @@ void doReadall (void)
 
   /**/ if ((model == PI_MODEL_A) || (model == PI_MODEL_B))
     abReadall (model, rev) ;
-  else if ((model == PI_MODEL_BP) || (model == PI_MODEL_AP) || (model == PI_MODEL_2))
+  else if ((model == PI_MODEL_BP) || (model == PI_MODEL_AP) || (model == PI_MODEL_2)|| (model == PI_MODEL_BM))
     piPlusReadall (model) ;
   else if (model == PI_MODEL_CM)
     cmReadall () ;

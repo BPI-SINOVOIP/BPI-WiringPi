@@ -2570,7 +2570,7 @@ int wiringPiISR (int pin, int mode, void (*function)(void))
   else
     bcmGpioPin = pin ;
 
-	/*add for BananaPro by LeMaker team*/
+
 	
 	if(BPVER == version)
 	{
@@ -2583,7 +2583,7 @@ int wiringPiISR (int pin, int mode, void (*function)(void))
 		if(edge[bcmGpioPin]==-1)
 		return wiringPiFailure (WPI_FATAL, "wiringPiISR: pin not sunpprt on bananaPi (%d,%d)\n", pin,bcmGpioPin) ;
 	}
-	/*end 2014.08.19*/
+
 	
 // Now export the pin and set the right edge
 //	We're going to use the gpio program to do this, so it assumes

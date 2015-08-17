@@ -76,8 +76,8 @@ char *usage = "Usage: gpio -v\n"
 	      "       gpio unload spi/i2c\n"
 	      "       gpio i2cd/i2cdetect\n"
 	      "       gpio usbp high/low\n"    
-//	      "       gpio gbr <channel>\n"                     /*remove for BananaPro by LeMaker team*/
-//	      "       gpio gbw <channel> <value>" ;	// No trailing newline needed here.      /*remove for BananaPro by LeMaker team*/
+//	      "       gpio gbr <channel>\n"                     
+//	      "       gpio gbw <channel> <value>" ;	// No trailing newline needed here.     
 			;
 
 #ifdef	NOT_FOR_NOW
@@ -194,7 +194,7 @@ static void doLoad (int argc, char *argv [])
 
   args1 [0] = args2 [0] = 0 ;
 	
-  /*add for BananaPro by LeMaker team*/
+  
 	if(BPVER ==  piBoardRev())
 	{
 	  /**/ if (strcasecmp (argv [2], "spi") == 0)

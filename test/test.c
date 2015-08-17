@@ -2,13 +2,13 @@
 #include <wiringPi.h>
 
 
-#define	LED	7
+#define	LED	7     //use wpi define
 
 int main (void)
 {
   printf ("Banana Pi blink\n") ;
 
-  wiringPiSetupGpio () ;
+  wiringPiSetup() ;
   pinMode (LED, OUTPUT) ;
 
   for (;;)

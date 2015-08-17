@@ -20,7 +20,7 @@ git clone https://github.com/BPI-SINOVOIP/BPI-WiringPi.
     
 ## Examples
 
-You can go to folder "test"/"m2_test" to test sample codes.
+You can go to folder "test" or "m2_test" to test sample codes.
 
 You can also use the examples and instructions provided by http://wiringpi.com/
 

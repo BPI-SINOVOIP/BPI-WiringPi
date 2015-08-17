@@ -96,7 +96,7 @@
 #define	PI_MAKER_SONY		 2
 #define	PI_MAKER_QISDA		 3
 #define	PI_MAKER_MBEST		 4
-#define	PI_MAKER_ROBET		 5
+#define	PI_MAKER_BPI		 5
 
 #define BPVER 3 
 extern const char *piModelNames    [8] ;

@@ -1820,7 +1820,7 @@ void piBoardId (int *model, int *rev, int *mem, int *maker, int *overVolted)
     else if (strcmp (c, "0007") == 0) { *model = PI_MODEL_A  ; *rev = PI_VERSION_2   ; *mem = 256 ; *maker = PI_MAKER_EGOMAN ; }
     else if (strcmp (c, "0008") == 0) { *model = PI_MODEL_A  ; *rev = PI_VERSION_2   ; *mem = 256 ; *maker = PI_MAKER_SONY ; ; }
     else if (strcmp (c, "0009") == 0) { *model = PI_MODEL_B  ; *rev = PI_VERSION_2   ; *mem = 256 ; *maker = PI_MAKER_QISDA  ; }
-    else if (strcmp (c, "000d") == 0) { *model = PI_MODEL_BP ; *rev = PI_VERSION_2   ; *mem = 512 ; *maker = PI_MAKER_EGOMAN ; }
+    else if (strcmp (c, "000d") == 0) { *model = PI_MODEL_BM ; *rev = PI_VERSION_1_2 ; *mem = 1024; *maker = PI_MAKER_BPI    ; }
     else if (strcmp (c, "000e") == 0) { *model = PI_MODEL_B  ; *rev = PI_VERSION_2   ; *mem = 512 ; *maker = PI_MAKER_SONY   ; }
     else if (strcmp (c, "000f") == 0) { *model = PI_MODEL_B  ; *rev = PI_VERSION_2   ; *mem = 512 ; *maker = PI_MAKER_EGOMAN ; }
     else if (strcmp (c, "0010") == 0) { *model = PI_MODEL_BP ; *rev = PI_VERSION_1_2 ; *mem = 512 ; *maker = PI_MAKER_SONY   ; }
@@ -1828,7 +1828,7 @@ void piBoardId (int *model, int *rev, int *mem, int *maker, int *overVolted)
     else if (strcmp (c, "0012") == 0) { *model = PI_MODEL_AP ; *rev = PI_VERSION_1_2 ; *mem = 256 ; *maker = PI_MAKER_SONY   ; }
     else if (strcmp (c, "0013") == 0) { *model = PI_MODEL_BP ; *rev = PI_VERSION_1_2 ; *mem = 512 ; *maker = PI_MAKER_MBEST  ; }
     else if (strcmp (c, "0014") == 0) { *model = PI_MODEL_CM ; *rev = PI_VERSION_1_2 ; *mem = 512 ; *maker = PI_MAKER_SONY   ; }
-    else if (strcmp (c, "0000") == 0) { *model = PI_MODEL_BM;  *rev = PI_VERSION_1_2;  *mem = 1024;  *maker = PI_MAKER_ROBET;}
+    else if (strcmp (c, "0000") == 0) { *model = PI_MODEL_BM;  *rev = PI_VERSION_1_2;  *mem = 1024;  *maker = PI_MAKER_BPI;}
 	else                              { *model = 0           ; *rev = 0              ; *mem =   0 ; *maker = 0 ;               }
   }
 }

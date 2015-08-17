@@ -89,12 +89,12 @@
 #define	PI_VERSION_1_2		3
 #define	PI_VERSION_2		4
 
-#define	PI_MAKER_UNKNOWN	0
-#define	PI_MAKER_EGOMAN		1
-#define	PI_MAKER_SONY		2
-#define	PI_MAKER_QISDA		3
-#define	PI_MAKER_MBEST		4
-#define	PI_MAKER_ROBET		5
+#define	PI_MAKER_UNKNOWN	 0
+#define	PI_MAKER_EGOMAN		 1
+#define	PI_MAKER_SONY		 2
+#define	PI_MAKER_QISDA		 3
+#define	PI_MAKER_MBEST		 4
+#define	PI_MAKER_BPI		 5
 
 #define BPVER 3 
 extern const char *piModelNames    [8] ;

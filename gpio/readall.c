@@ -108,8 +108,8 @@ static int physToWpi [64] =
   -1, -1,
   -1, -1,
   -1, -1,
-  17, 18,
-  19, 20,
+  -1, -1,
+  -1, -1,
   -1, -1, -1, -1, -1, -1, -1, -1, -1
 } ;
 
@@ -119,24 +119,24 @@ static char *physNames [64] =
 
   "   3.3v", "5v     ",
   "  SDA.1", "5V     ",
-  "  SCL.1", "0v     ",
-  "GPIO. 7", "TxD    ",
-  "     0v", "RxD    ",
-  "GPIO. 0", "GPIO. 1",
-  "GPIO. 2", "0v     ",
-  "GPIO. 3", "GPIO. 4",
-  "   3.3v", "GPIO. 5",
-  "   MOSI", "0v     ",
-  "   MISO", "GPIO. 6",
+  "  SCL.1", "GND    ",
+  "   GCLK", "TxD0   ",
+  "    GND", "RxD0   ",
+  "   GEN0", "GEN1   ",
+  "   GEN2", "GND    ",
+  "   GEN3", "GEN4   ",
+  "   3.3v", "GEN5   ",
+  "   MOSI", "GND    ",
+  "   MISO", "GEN6   ",
   "   SCLK", "CE0    ",
-  "     0v", "CE1    ",
+  "    GND", "CE1    ",
   "  SDA.0", "SCL.0  ",
-  "GPIO.21", "0v     ",
+  "GPIO.21", "GND    ",
   "GPIO.22", "GPIO.26",
-  "GPIO.23", "0v     ",
+  "GPIO.23", "GND    ",
   "GPIO.24", "GPIO.27",
   "GPIO.25", "GPIO.28",
-  "     0v", "GPIO.29",
+  "    GND", "GPIO.29",
        NULL, NULL,
        NULL, NULL,
        NULL, NULL,
@@ -290,7 +290,7 @@ static void plus2header (int model)
   else if (model == PI_MODEL_BP)
     printf (" +-----+-----+---------+------+---+--B Plus--+---+------+---------+-----+-----+\n") ;
   else
-    printf (" +-----+-----+---------+------+---+---Pi 2---+---+------+---------+-----+-----+\n") ;
+    printf (" +-----+-----+---------+------+---+---Pi ---+---+------+---------+-----+-----+\n") ;
 }
 
 
@@ -300,12 +300,12 @@ void piPlusReadall (int model)
 
   plus2header (model) ;
 
-  printf (" | BCM | wPi |   Name  | Mode | V | Physical | V | Mode | Name    | wPi | BCM |\n") ;
+  printf (" | CPU | wPi |   Name  | Mode | V | Physical | V | Mode | Name    | wPi | CPU |\n") ;
   printf (" +-----+-----+---------+------+---+----++----+---+------+---------+-----+-----+\n") ;
   for (pin = 1 ; pin <= 40 ; pin += 2)
     readallPhys (pin) ;
   printf (" +-----+-----+---------+------+---+----++----+---+------+---------+-----+-----+\n") ;
-  printf (" | BCM | wPi |   Name  | Mode | V | Physical | V | Mode | Name    | wPi | BCM |\n") ;
+  printf (" | CPU | wPi |   Name  | Mode | V | Physical | V | Mode | Name    | wPi | CPU |\n") ;
 
   plus2header (model) ;
 }
@@ -325,7 +325,7 @@ void doReadall (void)
 
   /**/ if ((model == PI_MODEL_A) || (model == PI_MODEL_B))
     abReadall (model, rev) ;
-  else if ((model == PI_MODEL_BP) || (model == PI_MODEL_AP) || (model == PI_MODEL_2))
+  else if ((model == PI_MODEL_BP) || (model == PI_MODEL_AP) || (model == PI_MODEL_2)|| (model == PI_MODEL_BM))
     piPlusReadall (model) ;
   else if (model == PI_MODEL_CM)
     cmReadall () ;

@@ -38,8 +38,8 @@
 // The SPI bus parameters
 //	Variables as they need to be passed as pointers later on
 
-const static char       *spiDev0  = "/dev/spidev0.0" ;
-const static char       *spiDev1  = "/dev/spidev0.1" ;
+const static char       *spiDev0  = "/dev/spidev1.0" ;
+const static char       *spiDev1  = "/dev/spidev1.1" ;
 const static uint8_t     spiBPW   = 8 ;
 const static uint16_t    spiDelay = 0 ;
 

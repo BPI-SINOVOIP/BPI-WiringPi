@@ -11,7 +11,7 @@ git clone https://github.com/BPI-SINOVOIP/BPI-WiringPi.
     git clone https://github.com/BPI-SINOVOIP/BPI-WiringPi.git -b BPI_M1_M1Plus
     
 ### For BPI-M2
-    git clone https://github.com/BPI-SINOVOIP/BPI-WiringPi.git -b BPI_2   
+    git clone https://github.com/BPI-SINOVOIP/BPI-WiringPi.git -b BPI_M2
     
 ## Installation
     cd BPI-WiringPi

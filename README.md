@@ -7,7 +7,7 @@ You can donwload the original wiringPi from:
 git clone https://github.com/BPI-SINOVOIP/BPI-WiringPi.
 
 ## Download
-### For BPI-M2
+### For BPI-M3
     git clone https://github.com/BPI-SINOVOIP/BPI-WiringPi.git -b BPI_M3
 ## Installation
     cd BPI-WiringPi

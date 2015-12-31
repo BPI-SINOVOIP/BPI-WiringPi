@@ -7,12 +7,8 @@ You can donwload the original wiringPi from:
 git clone https://github.com/BPI-SINOVOIP/BPI-WiringPi.
 
 ## Download
-### For BPI-M1 / M1Plus
-    git clone https://github.com/BPI-SINOVOIP/BPI-WiringPi.git -b BPI_M1_M1Plus
-    
 ### For BPI-M2
-    git clone https://github.com/BPI-SINOVOIP/BPI-WiringPi.git -b BPI_M2
-    
+    git clone https://github.com/BPI-SINOVOIP/BPI-WiringPi.git -b BPI_M3
 ## Installation
     cd BPI-WiringPi
     chmod +x ./build
@@ -20,7 +16,7 @@ git clone https://github.com/BPI-SINOVOIP/BPI-WiringPi.
     
 ## Examples
 
-You can go to folder "test" or "m2_test" to test sample codes.
+You can go to folder "m3_test" to test sample codes.
 
 You can also use the examples and instructions provided by http://wiringpi.com/
 

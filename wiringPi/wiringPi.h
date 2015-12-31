@@ -29,70 +29,79 @@
 // Deprecated
 #define	NUM_PINS	17
 
-#define	WPI_MODE_PINS		 0
-#define	WPI_MODE_GPIO		 1
-#define	WPI_MODE_GPIO_SYS	 2
-#define	WPI_MODE_PHYS		 3
-#define	WPI_MODE_PIFACE		 4
+#define	WPI_MODE_PINS		     0
+#define	WPI_MODE_GPIO		     1
+#define	WPI_MODE_GPIO_SYS	     2
+#define	WPI_MODE_PHYS		     3
+#define	WPI_MODE_PIFACE		     4
 #define	WPI_MODE_UNINITIALISED	-1
 
 // Pin modes
 
-#define	INPUT			 0
-#define	OUTPUT			 1
-#define	PWM_OUTPUT		 2
-#define	GPIO_CLOCK		 3
+#define	INPUT			     0
+#define	OUTPUT			     1
+#define	PWM_OUTPUT		     2
+#define	GPIO_CLOCK		     3
 #define	SOFT_PWM_OUTPUT		 4
 #define	SOFT_TONE_OUTPUT	 5
 #define	PWM_TONE_OUTPUT		 6
+#define I2C_PIN				 7
+#define SPI_PIN				 8
 
-#define	LOW			 0
-#define	HIGH			 1
+#define	LOW			         0
+#define	HIGH			     1
 
 // Pull up/down/none
 
-#define	PUD_OFF			 0
-#define	PUD_DOWN		 1
-#define	PUD_UP			 2
+#define	PUD_OFF			     0
+#define	PUD_DOWN		     1
+#define	PUD_UP			     2
+
+#define PULLUP               5
+#define PULLDOWN             6
+#define PULLOFF              7
 
 // PWM
 
-#define	PWM_MODE_MS		0
-#define	PWM_MODE_BAL		1
+#define	PWM_MODE_MS		     0
+#define	PWM_MODE_BAL		 1
 
 // Interrupt levels
 
-#define	INT_EDGE_SETUP		0
-#define	INT_EDGE_FALLING	1
-#define	INT_EDGE_RISING		2
-#define	INT_EDGE_BOTH		3
+#define	INT_EDGE_SETUP		 0
+#define	INT_EDGE_FALLING	 1
+#define	INT_EDGE_RISING		 2
+#define	INT_EDGE_BOTH		 3
 
 // Pi model types and version numbers
 //	Intended for the GPIO program Use at your own risk.
 
-#define	PI_MODEL_UNKNOWN	0
-#define	PI_MODEL_A		1
-#define	PI_MODEL_B		2
-#define	PI_MODEL_BP		3
-#define	PI_MODEL_CM		4
-#define	PI_MODEL_AP		5
-#define	PI_MODEL_2		6
+#define	PI_MODEL_UNKNOWN	 0
+#define	PI_MODEL_A		     1
+#define	PI_MODEL_B		     2
+#define	PI_MODEL_BP		     3
+#define	PI_MODEL_CM		     4
+#define	PI_MODEL_AP		     5
+#define	PI_MODEL_2		     6
+#define PI_MODEL_BM		     7
 
-#define	PI_VERSION_UNKNOWN	0
-#define	PI_VERSION_1		1
-#define	PI_VERSION_1_1		2
-#define	PI_VERSION_1_2		3
-#define	PI_VERSION_2		4
+#define	PI_VERSION_UNKNOWN	 0
+#define	PI_VERSION_1		 1
+#define	PI_VERSION_1_1		 2
+#define	PI_VERSION_1_2		 3
+#define	PI_VERSION_2		 4
 
-#define	PI_MAKER_UNKNOWN	0
-#define	PI_MAKER_EGOMAN		1
-#define	PI_MAKER_SONY		2
-#define	PI_MAKER_QISDA		3
-#define	PI_MAKER_MBEST		4
+#define	PI_MAKER_UNKNOWN	 0
+#define	PI_MAKER_EGOMAN		 1
+#define	PI_MAKER_SONY		 2
+#define	PI_MAKER_QISDA		 3
+#define	PI_MAKER_MBEST		 4
+#define	PI_MAKER_BPI		 5
 
-extern const char *piModelNames    [7] ;
+#define BPVER 3 
+extern const char *piModelNames    [8] ;
 extern const char *piRevisionNames [5] ;
-extern const char *piMakerNames    [5] ;
+extern const char *piMakerNames    [6] ;
 
 
 //	Intended for the GPIO program Use at your own risk.

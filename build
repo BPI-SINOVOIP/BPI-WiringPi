@@ -1,35 +1,7 @@
 #!/bin/sh
 
-# build
-#	Simple wiringPi build and install script
-#
-#	Copyright (c) 2012-2015 Gordon Henderson
-#################################################################################
-# This file is part of wiringPi:
-#	Wiring Compatable library for the Raspberry Pi
-#
-#    wiringPi is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Lesser General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
-#
-#    wiringPi is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Lesser General Public License for more details.
-#
-#    You should have received a copy of the GNU Lesser General Public License
-#    along with wiringPi.  If not, see <http://www.gnu.org/licenses/>.
-#################################################################################
-#
-# wiringPi is designed to run on a Raspberry Pi only.
-#	However if you're clever enough to actually look at this script to
-#	see why it's not building for you, then good luck.
-#
-#	To everyone else: Stop using cheap alternatives. Support the
-#	Raspberry Pi Foundation	as they're the only ones putting money
-#	back into education!
-#################################################################################
+# check if sudo is required and save the result as ${PFX}:
+[[ ${EUID} -ne 0 ]] && PFX='sudo ' || PFX=''
 
 check_make_ok() {
   if [ $? != 0 ]; then
@@ -65,11 +37,11 @@ fi
 
 if [ x$1 = "xuninstall" ]; then
   cd wiringPi
-  echo -n "wiringPi: " ; sudo make uninstall
+  echo -n "wiringPi: " ; ${PFX}make uninstall
   cd ../devLib
-  echo -n "DevLib:   " ; sudo make uninstall
+  echo -n "DevLib:   " ; ${PFX}make uninstall
   cd ../gpio
-  echo -n "gpio:     " ; sudo make uninstall
+  echo -n "gpio:     " ; ${PFX}make uninstall
   exit
 fi
 
@@ -121,30 +93,30 @@ fi
   echo
   echo "WiringPi Library"
   cd wiringPi
-  sudo make uninstall
+  ${PFX}make uninstall
   if [ x$1 = "xstatic" ]; then
     make -j5 static
     check_make_ok
-    sudo make install-static
+    ${PFX}make install-static
   else
     make -j5
     check_make_ok
-    sudo make install
+    ${PFX}make install
   fi
   check_make_ok
 
   echo
   echo "WiringPi Devices Library"
   cd ../devLib
-  sudo make uninstall
+  ${PFX}make uninstall
   if [ x$1 = "xstatic" ]; then
     make -j5 static
     check_make_ok
-    sudo make install-static
+    ${PFX}make install-static
   else
     make -j5
     check_make_ok
-    sudo make install
+    ${PFX}make install
   fi
   check_make_ok
 
@@ -153,7 +125,7 @@ fi
   cd ../gpio
   make -j5
   check_make_ok
-  sudo make install
+  ${PFX}make install
   check_make_ok
 
 # echo
@@ -165,7 +137,7 @@ fi
 echo
 echo All Done.
 echo ""
-echo "NOTE: To compile programs with wiringPi, you need to add:"
+echo "NOTE: To compile programs with wiringPi,you need to add:"
 echo "    -lwiringPi"
 echo "  to your compile line(s) To use the Gertboard, MaxDetect, etc."
 echo "  code (the devLib), you need to also add:"

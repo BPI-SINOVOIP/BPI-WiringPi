@@ -13,6 +13,9 @@ git clone https://github.com/BPI-SINOVOIP/BPI-WiringPi.
 ### For BPI-M2
     git clone https://github.com/BPI-SINOVOIP/BPI-WiringPi.git -b BPI_M2
     
+### For BPI-M3
+    git clone https://github.com/BPI-SINOVOIP/BPI-WiringPi.git -b BPI_M3    
+    
 ## Installation
     cd BPI-WiringPi
     chmod +x ./build
@@ -20,7 +23,7 @@ git clone https://github.com/BPI-SINOVOIP/BPI-WiringPi.
     
 ## Examples
 
-You can go to folder "test" or "m2_test" to test sample codes.
+You can go to folder "test folder" to test sample codes.
 
 You can also use the examples and instructions provided by http://wiringpi.com/
 

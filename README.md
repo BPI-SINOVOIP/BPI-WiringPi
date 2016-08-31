@@ -1,6 +1,6 @@
 # BPI-WiringPi README
 
-This is a modified WiringPi for BPI M1 / M1Plus /M2. We call it BPI-WiringPi.
+This is a modified WiringPi for BPI boards. We call it BPI-WiringPi.
 It is based on the original [WiringPi for Raspberry Pi created by Drogon](http://wiringpi.com/).
 The modification is done by [BPI-Team](http://www.banana-pi.org/). The BPI-WiringPi API usage are the same to the original wiringPi.
 You can donwload the original wiringPi from:
@@ -15,6 +15,9 @@ git clone https://github.com/BPI-SINOVOIP/BPI-WiringPi.
     
 ### For BPI-M3
     git clone https://github.com/BPI-SINOVOIP/BPI-WiringPi.git -b BPI_M3    
+
+### For BPI-M2P
+    git clone https://github.com/BPI-SINOVOIP/BPI-WiringPi.git -b BPI_M2P
     
 ## Installation
     cd BPI-WiringPi

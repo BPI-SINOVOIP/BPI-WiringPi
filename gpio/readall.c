@@ -108,8 +108,8 @@ static int physToWpi [64] =
   -1, -1,
   -1, -1,
   -1, -1,
-  17, 18,
-  19, 20,
+  -1, -1,
+  -1, -1,
   -1, -1, -1, -1, -1, -1, -1, -1, -1
 } ;
 
@@ -117,33 +117,33 @@ static char *physNames [64] =
 {
   NULL,
 
-  "   3.3v", "5v     ",
-  "  SDA.1", "5V     ",
-  "  SCL.1", "0v     ",
-  "GPIO. 7", "TxD    ",
-  "     0v", "RxD    ",
-  "GPIO. 0", "GPIO. 1",
-  "GPIO. 2", "0v     ",
-  "GPIO. 3", "GPIO. 4",
-  "   3.3v", "GPIO. 5",
-  "   MOSI", "0v     ",
-  "   MISO", "GPIO. 6",
-  "   SCLK", "CE0    ",
-  "     0v", "CE1    ",
-  "  SDA.0", "SCL.0  ",
-  "GPIO.21", "0v     ",
-  "GPIO.22", "GPIO.26",
-  "GPIO.23", "0v     ",
-  "GPIO.24", "GPIO.27",
-  "GPIO.25", "GPIO.28",
-  "     0v", "GPIO.29",
+  "     3.3v", "5v       ",
+  "    SDA.1", "5V       ",
+  "    SCL.1", "GND      ",
+  "     PWM1", "UART3-TX ",
+  "      GND", "UART3-RX ",
+  " UART2-RX", "UART3-CTS",
+  " UART2-TX", "GND      ",
+  "UART2-CTS", "UART3-RTS",
+  "     3.3v", "GPIO.PC04",
+  "SPI0_MOSI", "GND      ",
+  "SPI0_MISO", "UART2-RTS",
+  " SPI0_CLK", "SPI0-CS  ",
+  "      GND", "GPIO.PL07",
+  "    SDA.0", "SCL.0    ",
+  "GPIO.PA07", "GND      ",
+  "GPIO.PA08", "GPIO.PL02",
+  "GPIO.PA09", "GND      ",
+  "GPIO.PA10", "GPIO.PL04",
+  "SPDIF-OUT", "GPIO.PA21",
+  "      GND", "GPIO.PA20",
        NULL, NULL,
        NULL, NULL,
        NULL, NULL,
        NULL, NULL,
        NULL, NULL,
-  "GPIO.17", "GPIO.18",
-  "GPIO.19", "GPIO.20",
+       NULL, NULL,
+       NULL, NULL,
    NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,
 } ;
 
@@ -290,7 +290,7 @@ static void plus2header (int model)
   else if (model == PI_MODEL_BP)
     printf (" +-----+-----+---------+------+---+--B Plus--+---+------+---------+-----+-----+\n") ;
   else
-    printf (" +-----+-----+---------+------+---+---Pi 2---+---+------+---------+-----+-----+\n") ;
+    printf (" +-----+-----+---------+------+---+---Pi ---+---+------+---------+-----+-----+\n") ;
 }
 
 
@@ -300,12 +300,12 @@ void piPlusReadall (int model)
 
   plus2header (model) ;
 
-  printf (" | BCM | wPi |   Name  | Mode | V | Physical | V | Mode | Name    | wPi | BCM |\n") ;
-  printf (" +-----+-----+---------+------+---+----++----+---+------+---------+-----+-----+\n") ;
+  printf (" | CPU | wPi |    Name   | Mode | V | Physical | V | Mode |   Name    | wPi | CPU |\n") ;
+  printf (" +-----+-----+-----------+------+---+----++----+---+------+-----------+-----+-----+\n") ;
   for (pin = 1 ; pin <= 40 ; pin += 2)
     readallPhys (pin) ;
-  printf (" +-----+-----+---------+------+---+----++----+---+------+---------+-----+-----+\n") ;
-  printf (" | BCM | wPi |   Name  | Mode | V | Physical | V | Mode | Name    | wPi | BCM |\n") ;
+  printf (" +-----+-----+-----------+------+---+----++----+---+------+-----------+-----+-----+\n") ;
+  printf (" | CPU | wPi |    Name   | Mode | V | Physical | V | Mode |   Name    | wPi | CPU |\n") ;
 
   plus2header (model) ;
 }
@@ -325,7 +325,7 @@ void doReadall (void)
 
   /**/ if ((model == PI_MODEL_A) || (model == PI_MODEL_B))
     abReadall (model, rev) ;
-  else if ((model == PI_MODEL_BP) || (model == PI_MODEL_AP) || (model == PI_MODEL_2))
+  else if ((model == PI_MODEL_BP) || (model == PI_MODEL_AP) || (model == PI_MODEL_2)|| (model == PI_MODEL_BM))
     piPlusReadall (model) ;
   else if (model == PI_MODEL_CM)
     cmReadall () ;

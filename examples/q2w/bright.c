@@ -26,7 +26,7 @@
 #include <wiringPi.h>
 #include <pcf8591.h>
 
-#define	LED		  1
+#define	LED		  7
 #define Q2W_ABASE       120
 
 int main (void)
